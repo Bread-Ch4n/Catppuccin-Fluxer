@@ -247,4 +247,8 @@
     > [class*="countWrapper"] {
     color: var(--ctp-mauve);
   }
+
+  span:is([class*="newMessagesBarAction"], [class*="newMessagesBarText"]) {
+    color: var(--ctp-base);
+  }
 }
