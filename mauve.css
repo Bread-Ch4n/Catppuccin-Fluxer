@@ -49,7 +49,9 @@
   --background-primary: var(--ctp-base);
   --background-secondary: var(--ctp-mantle);
   --background-secondary-alt: var(--ctp-crust);
-  --background-secondary-lighter: hsl(from var(--ctp-mantle) h s calc(l + 5));
+  --background-secondary-lighter: hsl(
+    from var(--ctp-mantle) h s calc(l + 5)
+  ); /* Main content bg */
   --background-tertiary: var(--ctp-surface0);
   --background-textarea: var(--ctp-surface0);
   --background-header-primary: var(--ctp-mantle);
@@ -134,20 +136,28 @@
 
 /* ── Extra Fixes ────────────────────────────────────────────────────── */
 :root {
+  /* Selected dot center collor. Used in notification settings */
+  [class*="radioIndicator"] {
+    background-color: var(--ctp-base);
+  }
+
   [class*="guildIcon"] {
     color: var(--text-on-brand-primary);
   }
 
+  /* Get Plutonium pop up in Profile Banner Costumization */
   [class*="upsell"] {
+    /* Icon */
     color: var(--text-on-brand-primary);
-    [class*="icon"] {
-      color: var(--text-on-brand-primary);
-    }
-    [class*="content"] > [class*="text"] {
+
+    /* Text */
+    :is([class*="icon"], [class*="content"] > [class*="text"]) {
       color: var(--text-on-brand-primary);
     }
 
-    [class*="content"] > [class*="actions"] {
+    /* Button */
+    [class*="content"] > [class*="actions"] > [class*="button"] {
+      border: 1px solid var(--text-on-brand-primary);
       background-color: var(--ctp-mauve);
       color: var(--text-on-brand-primary);
     }
