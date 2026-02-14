@@ -240,4 +240,11 @@
       }
     }
   }
+
+  /* Reaction counter text when you have pressed it */
+  button[class*="reactionButton"][aria-pressed="true"]
+    > [class*="reactionInner"]
+    > [class*="countWrapper"] {
+    color: var(--ctp-mauve);
+  }
 }
