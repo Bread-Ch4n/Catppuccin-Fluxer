@@ -141,25 +141,103 @@
     background-color: var(--ctp-base);
   }
 
+  [class*="innerDotRadio"] {
+    fill: var(--ctp-base);
+  }
+
   [class*="guildIcon"] {
-    color: var(--text-on-brand-primary);
+    color: var(--ctp-base);
   }
 
   /* Get Plutonium pop up in Profile Banner Costumization */
   [class*="upsell"] {
     /* Icon */
-    color: var(--text-on-brand-primary);
+    color: var(--ctp-base);
 
     /* Text */
     :is([class*="icon"], [class*="content"] > [class*="text"]) {
-      color: var(--text-on-brand-primary);
+      color: var(--ctp-base);
     }
 
     /* Button */
     [class*="content"] > [class*="actions"] > [class*="button"] {
-      border: 1px solid var(--text-on-brand-primary);
+      border: 1px solid var(--ctp-base);
       background-color: var(--ctp-mauve);
-      color: var(--text-on-brand-primary);
+      color: var(--ctp-base);
+    }
+  }
+
+  [class*="clickableItemContent"] > [class*="clickableItemIcon"] {
+    color: var(--ctp-base);
+  }
+
+  /* Cancel friend request */
+  [class*="friendActions"] > [class*="actionButtonCancel"] {
+    color: var(--ctp-base);
+  }
+
+  /* Fluxer Plutonium For Me & Gift buttons */
+  [aria-label="Purchase mode"] {
+    button[class*="button"][aria-pressed="true"] {
+      color: var(--ctp-base);
+    }
+
+    button[class*="button"][aria-pressed="true"]:hover {
+      background-color: hsl(from var(--ctp-mauve) h s calc(l - 10));
+      color: var(--ctp-base);
+    }
+
+    button[class*="button"][aria-pressed="false"] {
+      color: var(--ctp-text);
+    }
+  }
+
+  /* Most Popular and Remaining badges */
+  div[class*="popularBadge"]:not([class*="popularBadgeSpace"]) {
+    border: 1px solid var(--ctp-mauve);
+    background-color: var(--ctp-base);
+  }
+
+  /* Add border color on default cards */
+  [class*="cardDefault"]:has([class*="popularBadge"]) {
+    border-color: var(--ctp-mauve);
+  }
+
+  /* Yearly Card */
+  [class*="cardPopular"] {
+    :is(
+      [class*="cardTitlePopular"],
+      [class*="cardPeriodPopular"],
+      [class*="cardPricePopular"]
+    ) {
+      color: var(--ctp-base);
+    }
+
+    [class*="badgeSpace"] {
+      border-color: var(--ctp-base);
+      background-color: var(--ctp-mauve);
+      color: var(--ctp-base);
+    }
+
+    button[class*="button"][aria-label="Yearly"] {
+      background-color: var(--ctp-base);
+      color: var(--ctp-mauve);
+    }
+
+    button[class*="button"][aria-label="Yearly"]:hover {
+      background-color: hsl(from var(--ctp-base) h s calc(l + 10));
+      color: var(--ctp-mauve);
+    }
+  }
+
+  [class*="benefitsGrid"] {
+    [class*="benefit"] {
+      border-color: var(--ctp-mauve);
+      [class*="iconContainer"]
+        > [class*="iconWrapper"]
+        > [class*="benefitIcon"] {
+        color: var(--ctp-base);
+      }
     }
   }
 }
