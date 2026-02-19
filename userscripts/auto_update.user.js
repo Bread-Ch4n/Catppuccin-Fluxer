@@ -2,7 +2,7 @@
 // @name         Catppuccin Fluxer Auto-updater
 // @description  This script auto updates the theme from the github.
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.0.1
 // @match        https://web.fluxer.app/*
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
@@ -54,6 +54,8 @@ async function checkForUpdates() {
   try {
     const headRes = await gmFetch(CSS_URL, "HEAD");
 
+    let fresh_install = false;
+
     const newETag = headRes.responseHeaders
       .split("\n")
       .find((h) => h.toLowerCase().startsWith("etag:"))
@@ -67,6 +69,8 @@ async function checkForUpdates() {
     const firstLine = storedCSS.split("\n")[0];
     if (firstLine.startsWith("/* ETAG:")) {
       currentETag = firstLine.replace("/* ETAG:", "").replace("*/", "").trim();
+    } else {
+      fresh_install = true;
     }
 
     if (newETag && newETag !== currentETag) {
@@ -76,6 +80,10 @@ async function checkForUpdates() {
     } else {
       if (storedCSS) applyCSS(storedCSS);
       console.log("[Catppuccin Fluxer] Theme already up to date!");
+    }
+
+    if (fresh_install) {
+      location.reload();
     }
   } catch (err) {
     console.error("[Catppuccin Fluxer] Update check failed:", err);
