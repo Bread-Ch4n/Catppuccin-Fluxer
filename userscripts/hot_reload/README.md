@@ -19,7 +19,7 @@ bun run index.js
 node index.js
 ```
 
-The server will watch for changes to your `mauve.css` file.
+The server will watch for changes to your `mauve.css` or selected file.
 
 ### Step 2: Install the userscript
 
@@ -27,7 +27,7 @@ Click [here](https://raw.githubusercontent.com/Bread-Ch4n/Catppuccin-Fluxer/refs
 
 ### Step 3: Start editing
 
-Edit `mauve.css` and your changes will automatically apply to the page without requiring a refresh!
+Edit `mauve.css` or your selected file and your changes will automatically apply to the page without requiring a refresh!
 
 ## Notes
 

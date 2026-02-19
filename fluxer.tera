@@ -1,0 +1,307 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - flavor
+    - accent
+  filename: "themes/{{ flavor.identifier }}/{{ accent }}.css"
+  hex_format: "#{{r}}{{g}}{{b}}"
+---
+
+:root
+{/* Status */
+    --status-online: {{ green.hex }};
+    --status-idle: {{ yellow.hex }};
+    --status-dnd: {{ maroon.hex }};
+    --status-offline: {{ overlay0.hex }};
+    --status-danger: {{ red.hex }};
+
+  /* Backgrounds */
+  --background-primary: {{ base.hex }};
+  --background-secondary: {{ mantle.hex }};
+  --background-secondary-alt: {{ crust.hex }};
+  --background-secondary-lighter: hsl(
+    from {{ mantle.hex }} h s calc(l + 5)
+  ); 
+  
+  /* Main content bg */
+  --background-tertiary: {{ surface0.hex }};
+  --background-textarea: {{ surface0.hex }};
+  --background-header-primary: {{ mantle.hex }};
+  --background-header-primary-hover: {{ surface0.hex }};
+  --background-header-secondary: {{ crust.hex }};
+
+  /* Background modifiers */
+  --background-modifier-hover: {{ surface0.hex }};
+  --background-modifier-selected: {{ surface1.hex }};
+  --background-modifier-accent: {{ surface2.hex }};
+  --background-modifier-accent-focus: {{ surface1.hex }};
+
+  /* Brand */
+  --brand-primary: {{ flavor.colors[accent].hex }};
+  --brand-primary-light: hsl(from {{ flavor.colors[accent].hex }} h s calc(l + 8));
+  --brand-primary-fill: {{ base.hex }};
+  --brand-secondary: hsl(from {{ flavor.colors[accent].hex }} h s calc(l - 10));
+
+  /* Text */
+  --text-primary: {{ text.hex }};
+  --text-secondary: {{ subtext1.hex }};
+  --text-primary-muted: {{ subtext0.hex }};
+  --text-tertiary: {{ overlay2.hex }};
+  --text-tertiary-muted: {{ overlay1.hex }};
+  --text-tertiary-secondary: {{ overlay2.hex }};
+  --text-chat: {{ text.hex }};
+  --text-chat-muted: {{ subtext0.hex }};
+  --text-on-brand-primary: {{ base.hex }};
+  --text-link: {{ blue.hex }};
+
+  /* Borders */
+  --border-color: {{ surface1.hex }};
+  --border-color-hover: {{ surface2.hex }};
+  --border-color-focus: {{ flavor.colors[accent].hex }};
+
+  /* Misc */
+  --accent-purple: {{ flavor.colors[accent].hex }};
+  --bg-code: {{ mantle.hex }};
+  --guild-list-foreground: {{ flavor.colors[accent].hex }};
+
+  /* Alerts */
+  --alert-note-color: {{ blue.hex }};
+  --alert-important-color: {{ flavor.colors[accent].hex }};
+  --alert-tip-color: {{ blue.hex }};
+  --alert-warning-color: {{ yellow.hex }};
+  --alert-caution-color: {{ red.hex }};
+
+  /* Markup */
+  --markup-mention-fill: {{ surface1.hex }};
+  --markup-interactive-hover-fill: {{ surface2.hex }};
+
+  /* Buttons – primary */
+  --button-primary-fill:{{ flavor.colors[accent].hex }};
+  --button-primary-active-fill: hsl(from {{ flavor.colors[accent].hex }} h s calc(l - 8));
+  --button-primary-text: {{ base.hex }};
+
+  /* Buttons – secondary */
+  --button-secondary-fill: {{ surface0.hex }};
+  --button-secondary-text: {{ text.hex }};
+  --button-secondary-active-fill: {{ surface1.hex }};
+
+  /* Buttons – danger */
+  --button-danger-fill: {{ red.hex }};
+  --button-danger-active-fill: hsl(from {{ red.hex }} h s calc(l - 15));
+  --button-danger-text: {{ base.hex }};
+  --button-danger-outline-text: {{ red.hex }};
+  --button-danger-outline-border: {{ red.hex }};
+  --button-danger-outline-active-fill: #2d1f24;
+  --button-danger-outline-active-border: hsl(
+    from {{ red.hex }} h s calc(l - 15)
+  );
+
+  /* Buttons – misc */
+  --button-inverted-fill: {{ text.hex }};
+  --button-inverted-text: {{ base.hex }};
+  --button-ghost-text: {{ flavor.colors[accent].hex }};
+  --button-outline-border: {{ flavor.colors[accent].hex }};
+  --button-outline-text: {{ flavor.colors[accent].hex }};
+  --button-outline-active-fill: transparent;
+  --button-outline-active-border: hsl(from {{ flavor.colors[accent].hex }} h s calc(l - 8));
+}
+/* #endregion */
+
+:root {
+  /* #region GuildsLayout */
+
+  /* Direct Messages & Favourites buttons */
+  [class*="GuildsLayout.module__guildListItem"] {
+    > div > [class*="GuildsLayout.module__fluxerButtonIcon"] {
+      color: var(--button-primary-text);
+      transition: color 0.2s, background-color 0.2s,
+  border-color 0.2s;
+    }
+
+    &:hover > div > [class*="GuildsLayout.module__fluxerButtonIcon"] {
+    background-color: var(--button-primary-text); color:
+    var(--button-primary-fill); border: 1px solid var(--button-primary-fill);
+  }
+}
+
+/* #endregion */ /* #region DMList */ /* Friends, Personal Notes & Plutonium
+buttons */ [class*="DMList.module__clickableItem"] [class*="clickableItemIcon"]
+{color: var(--brand-primary-fill);
+  }
+
+  [class*="DMList.module__clickableItemSelected"] [class*="clickableItemIcon"] {
+    background-color: var(--button-primary-text);
+    color: var(--button-primary-fill);
+    border: 1px solid var(--button-primary-fill);
+  }
+
+  /* #endregion */
+
+  /* #region Fluxer Plutonium Modal */
+
+  :is(
+    [class*="SettingsModalLayout.module__desktopScrollInner"], [class*="PremiumModal.module__contentContainer"]
+  ) {
+    [class*="mainContainer"] {
+      [class*="toggleContainer"] {
+        & button[class*="button"] {
+          &[aria-pressed="true"] {
+            color: var(--brand-primary-fill);
+
+            &:hover {
+              background-color: hsl(from var(--brand-primary) h s calc(l - 10));
+            }
+          }
+
+          &[aria-pressed="false"] {
+            color: var(--text-primary);
+          }
+        }
+      }
+
+      [class*="gridWrapper"] {
+        [class*="popularBadgeSpace"] > [class*="popularBadge"] {
+          border: 1px solid var(--brand-primary);
+          background-color: var(--brand-primary-fill);
+        }
+
+        [class*="cardDefault"] {
+          border-color: var(--brand-primary);
+          [class*="contentContainer"] > * {
+            color: var(--brand-primary);
+          }
+        }
+
+        [class*="cardPopular"] {
+          :is(
+            [class*="cardTitlePopular"],
+  [class*="cardPeriodPopular"],
+            [class*="cardPricePopular"]
+          ) {
+    color: var(--brand-primary-fill);
+  }
+  [class*="badgeSpace"] {
+    border-color: var(--brand-primary-fill); background-color:
+    var(--brand-primary); color: var(--brand-primary-fill);
+  }
+  & button[class*="button"][aria-label="Yearly"] {
+    background-color: var(--brand-primary-fill); color: var(--brand-primary);
+    &:hover
+    {background-color: hsl(
+                from var(--brand-primary-fill) h s calc(l + 10)
+              );
+            }
+          }
+        }
+      }
+
+      [class*="FeatureComparisonTable.module__table"] {
+        &, [class*="header"],
+      [class*="row"] {border-color: var(--border-color);}
+    }
+  }
+}
+
+/* #endregion */ /* #region Favorites Welcome Section */ /* Favourites star icon
+*/ [class*="FavoritesWelcomeSection.module__iconWrapper"]
+{color: var(--brand-primary-fill);
+  }
+
+  /* #endregion */
+
+  /* #region Settings Modal */
+
+  /* #region Profile*/
+
+  [class*="PlutoniumUpsell.module__upsell"] {
+    & [class*="text"], & svg {
+      color: var(--background-primary);
+    }
+
+    & button {
+      border: 1px solid var(--button-primary-text);
+      background-color: var(--button-primary-fill);
+      color: var(--button-primary-text);
+
+      &:hover {
+        background-color: var(--button-primary-active-fill);
+      }
+    }
+  }
+
+  /* #endregion */
+
+  /* #endregion */
+
+  /* #region Tiny Fixed */
+
+  [class*="ContextMenu.module__checkbox"] {
+    border-color: var(--brand-primary);
+    :after {
+      border-color: var(--brand-primary-fill);
+    }
+  }
+
+  [class*="RadioGroup.module__innerDotRadio"] {
+    fill: var(--brand-primary-fill);
+  }
+
+  /* Switches */
+  [class*="Switch.module__switchThumb"][data-state="checked"] {
+    & svg {
+      fill: var(--brand-primary-fill);
+    }
+  }
+
+  /* GIF text on gifs */
+  [class*="GifIndicator.module__indicator"] {
+    color: var(--text-primary);
+  }
+
+  /* New messages bar */
+  [class*="Messages.module__newMessagesBar"] {
+    color: var(--brand-primary-fill);
+  }
+
+  /* Pressed reaction counter */
+  [class*="MessageReactions.module__reactionButton"][aria-pressed="true"]
+    [class*="countWrapper"] {
+    color: var(--brand-primary);
+  }
+
+  [class*="LinkedAccountsTab.module__platformIconButton"] {
+    background-color: color-mix(in srgb,
+  var(--brand-primary) 30%, transparent);
+    border: 1px solid var(--brand-primary);
+    svg {
+    color: var(--brand-primary); fill: var(--brand-primary);
+  }
+}
+
+[class*="ThemeTab.module__themeButtonCheckmarkIcon"]
+{color: var(--brand-primary-fill);
+  }
+
+  [class*="DevicesTab.module__authSession"] {
+    border-color: var(--border-color);
+  }
+
+  [class*="ProfileTypeSelector.module__guildOption"] {
+    color: var(--brand-primary);
+
+    [aria-selected="true"] & {
+      color: var(--brand-primary-fill);
+      background-color: color-mix(in srgb, var(--brand-primary) 10%,
+  transparent);
+    }
+  }
+
+  /* #endregion */
+
+  /* ! TODO: update to newer classnames. This still likely works but needs an update just incase */
+  /* Cancel friend request */
+  [class*="friendActions"] > [class*="actionButtonCancel"] {
+    color: var(--brand-primary-fill);
+  }
+}

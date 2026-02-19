@@ -4,7 +4,14 @@ const fs = require("fs");
 
 const PORT = 6934;
 
-const cssPath = path.join(__dirname, "..", "..", "mauve.css");
+const cssPath = path.join(
+  __dirname,
+  "..",
+  "..",
+  "themes",
+  "mocha",
+  "mocha-mauve.css",
+);
 
 const clients = new Set();
 let updateCount = 0;

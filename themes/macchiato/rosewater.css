@@ -1,0 +1,298 @@
+
+:root
+{/* Status */
+    --status-online: #a6da95;
+    --status-idle: #eed49f;
+    --status-dnd: #ee99a0;
+    --status-offline: #6e738d;
+    --status-danger: #ed8796;
+
+  /* Backgrounds */
+  --background-primary: #24273a;
+  --background-secondary: #1e2030;
+  --background-secondary-alt: #181926;
+  --background-secondary-lighter: hsl(
+    from #1e2030 h s calc(l + 5)
+  ); 
+  
+  /* Main content bg */
+  --background-tertiary: #363a4f;
+  --background-textarea: #363a4f;
+  --background-header-primary: #1e2030;
+  --background-header-primary-hover: #363a4f;
+  --background-header-secondary: #181926;
+
+  /* Background modifiers */
+  --background-modifier-hover: #363a4f;
+  --background-modifier-selected: #494d64;
+  --background-modifier-accent: #5b6078;
+  --background-modifier-accent-focus: #494d64;
+
+  /* Brand */
+  --brand-primary: #f4dbd6;
+  --brand-primary-light: hsl(from #f4dbd6 h s calc(l + 8));
+  --brand-primary-fill: #24273a;
+  --brand-secondary: hsl(from #f4dbd6 h s calc(l - 10));
+
+  /* Text */
+  --text-primary: #cad3f5;
+  --text-secondary: #b8c0e0;
+  --text-primary-muted: #a5adcb;
+  --text-tertiary: #939ab7;
+  --text-tertiary-muted: #8087a2;
+  --text-tertiary-secondary: #939ab7;
+  --text-chat: #cad3f5;
+  --text-chat-muted: #a5adcb;
+  --text-on-brand-primary: #24273a;
+  --text-link: #8aadf4;
+
+  /* Borders */
+  --border-color: #494d64;
+  --border-color-hover: #5b6078;
+  --border-color-focus: #f4dbd6;
+
+  /* Misc */
+  --accent-purple: #f4dbd6;
+  --bg-code: #1e2030;
+  --guild-list-foreground: #f4dbd6;
+
+  /* Alerts */
+  --alert-note-color: #8aadf4;
+  --alert-important-color: #f4dbd6;
+  --alert-tip-color: #8aadf4;
+  --alert-warning-color: #eed49f;
+  --alert-caution-color: #ed8796;
+
+  /* Markup */
+  --markup-mention-fill: #494d64;
+  --markup-interactive-hover-fill: #5b6078;
+
+  /* Buttons – primary */
+  --button-primary-fill:#f4dbd6;
+  --button-primary-active-fill: hsl(from #f4dbd6 h s calc(l - 8));
+  --button-primary-text: #24273a;
+
+  /* Buttons – secondary */
+  --button-secondary-fill: #363a4f;
+  --button-secondary-text: #cad3f5;
+  --button-secondary-active-fill: #494d64;
+
+  /* Buttons – danger */
+  --button-danger-fill: #ed8796;
+  --button-danger-active-fill: hsl(from #ed8796 h s calc(l - 15));
+  --button-danger-text: #24273a;
+  --button-danger-outline-text: #ed8796;
+  --button-danger-outline-border: #ed8796;
+  --button-danger-outline-active-fill: #2d1f24;
+  --button-danger-outline-active-border: hsl(
+    from #ed8796 h s calc(l - 15)
+  );
+
+  /* Buttons – misc */
+  --button-inverted-fill: #cad3f5;
+  --button-inverted-text: #24273a;
+  --button-ghost-text: #f4dbd6;
+  --button-outline-border: #f4dbd6;
+  --button-outline-text: #f4dbd6;
+  --button-outline-active-fill: transparent;
+  --button-outline-active-border: hsl(from #f4dbd6 h s calc(l - 8));
+}
+/* #endregion */
+
+:root {
+  /* #region GuildsLayout */
+
+  /* Direct Messages & Favourites buttons */
+  [class*="GuildsLayout.module__guildListItem"] {
+    > div > [class*="GuildsLayout.module__fluxerButtonIcon"] {
+      color: var(--button-primary-text);
+      transition: color 0.2s, background-color 0.2s,
+  border-color 0.2s;
+    }
+
+    &:hover > div > [class*="GuildsLayout.module__fluxerButtonIcon"] {
+    background-color: var(--button-primary-text); color:
+    var(--button-primary-fill); border: 1px solid var(--button-primary-fill);
+  }
+}
+
+/* #endregion */ /* #region DMList */ /* Friends, Personal Notes & Plutonium
+buttons */ [class*="DMList.module__clickableItem"] [class*="clickableItemIcon"]
+{color: var(--brand-primary-fill);
+  }
+
+  [class*="DMList.module__clickableItemSelected"] [class*="clickableItemIcon"] {
+    background-color: var(--button-primary-text);
+    color: var(--button-primary-fill);
+    border: 1px solid var(--button-primary-fill);
+  }
+
+  /* #endregion */
+
+  /* #region Fluxer Plutonium Modal */
+
+  :is(
+    [class*="SettingsModalLayout.module__desktopScrollInner"], [class*="PremiumModal.module__contentContainer"]
+  ) {
+    [class*="mainContainer"] {
+      [class*="toggleContainer"] {
+        & button[class*="button"] {
+          &[aria-pressed="true"] {
+            color: var(--brand-primary-fill);
+
+            &:hover {
+              background-color: hsl(from var(--brand-primary) h s calc(l - 10));
+            }
+          }
+
+          &[aria-pressed="false"] {
+            color: var(--text-primary);
+          }
+        }
+      }
+
+      [class*="gridWrapper"] {
+        [class*="popularBadgeSpace"] > [class*="popularBadge"] {
+          border: 1px solid var(--brand-primary);
+          background-color: var(--brand-primary-fill);
+        }
+
+        [class*="cardDefault"] {
+          border-color: var(--brand-primary);
+          [class*="contentContainer"] > * {
+            color: var(--brand-primary);
+          }
+        }
+
+        [class*="cardPopular"] {
+          :is(
+            [class*="cardTitlePopular"],
+  [class*="cardPeriodPopular"],
+            [class*="cardPricePopular"]
+          ) {
+    color: var(--brand-primary-fill);
+  }
+  [class*="badgeSpace"] {
+    border-color: var(--brand-primary-fill); background-color:
+    var(--brand-primary); color: var(--brand-primary-fill);
+  }
+  & button[class*="button"][aria-label="Yearly"] {
+    background-color: var(--brand-primary-fill); color: var(--brand-primary);
+    &:hover
+    {background-color: hsl(
+                from var(--brand-primary-fill) h s calc(l + 10)
+              );
+            }
+          }
+        }
+      }
+
+      [class*="FeatureComparisonTable.module__table"] {
+        &, [class*="header"],
+      [class*="row"] {border-color: var(--border-color);}
+    }
+  }
+}
+
+/* #endregion */ /* #region Favorites Welcome Section */ /* Favourites star icon
+*/ [class*="FavoritesWelcomeSection.module__iconWrapper"]
+{color: var(--brand-primary-fill);
+  }
+
+  /* #endregion */
+
+  /* #region Settings Modal */
+
+  /* #region Profile*/
+
+  [class*="PlutoniumUpsell.module__upsell"] {
+    & [class*="text"], & svg {
+      color: var(--background-primary);
+    }
+
+    & button {
+      border: 1px solid var(--button-primary-text);
+      background-color: var(--button-primary-fill);
+      color: var(--button-primary-text);
+
+      &:hover {
+        background-color: var(--button-primary-active-fill);
+      }
+    }
+  }
+
+  /* #endregion */
+
+  /* #endregion */
+
+  /* #region Tiny Fixed */
+
+  [class*="ContextMenu.module__checkbox"] {
+    border-color: var(--brand-primary);
+    :after {
+      border-color: var(--brand-primary-fill);
+    }
+  }
+
+  [class*="RadioGroup.module__innerDotRadio"] {
+    fill: var(--brand-primary-fill);
+  }
+
+  /* Switches */
+  [class*="Switch.module__switchThumb"][data-state="checked"] {
+    & svg {
+      fill: var(--brand-primary-fill);
+    }
+  }
+
+  /* GIF text on gifs */
+  [class*="GifIndicator.module__indicator"] {
+    color: var(--text-primary);
+  }
+
+  /* New messages bar */
+  [class*="Messages.module__newMessagesBar"] {
+    color: var(--brand-primary-fill);
+  }
+
+  /* Pressed reaction counter */
+  [class*="MessageReactions.module__reactionButton"][aria-pressed="true"]
+    [class*="countWrapper"] {
+    color: var(--brand-primary);
+  }
+
+  [class*="LinkedAccountsTab.module__platformIconButton"] {
+    background-color: color-mix(in srgb,
+  var(--brand-primary) 30%, transparent);
+    border: 1px solid var(--brand-primary);
+    svg {
+    color: var(--brand-primary); fill: var(--brand-primary);
+  }
+}
+
+[class*="ThemeTab.module__themeButtonCheckmarkIcon"]
+{color: var(--brand-primary-fill);
+  }
+
+  [class*="DevicesTab.module__authSession"] {
+    border-color: var(--border-color);
+  }
+
+  [class*="ProfileTypeSelector.module__guildOption"] {
+    color: var(--brand-primary);
+
+    [aria-selected="true"] & {
+      color: var(--brand-primary-fill);
+      background-color: color-mix(in srgb, var(--brand-primary) 10%,
+  transparent);
+    }
+  }
+
+  /* #endregion */
+
+  /* ! TODO: update to newer classnames. This still likely works but needs an update just incase */
+  /* Cancel friend request */
+  [class*="friendActions"] > [class*="actionButtonCancel"] {
+    color: var(--brand-primary-fill);
+  }
+}
