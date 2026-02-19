@@ -1,16 +1,17 @@
 // ==UserScript==
+// @author       Bread-Chan
 // @name         Catppuccin Fluxer Auto-updater
 // @description  This script auto updates the theme from the github.
-// @namespace    http://tampermonkey.net/
 // @version      1.0.1
+// @homepageURL  https://github.com/Bread-Ch4n/Catppuccin-Fluxer
+// @downloadURL  https://raw.githubusercontent.com/Bread-Ch4n/Catppuccin-Fluxer/refs/heads/main/userscripts/auto_update.user.js
+// @namespace    https://github.com/Bread-Ch4n/Catppuccin-Fluxer
 // @match        https://web.fluxer.app/*
 // @grant        GM_xmlhttpRequest
 // @grant        GM_getValue
 // @grant        GM_setValue
 // @connect      raw.githubusercontent.com
-// @homepageURL https://github.com/Bread-Ch4n/Catppuccin-Fluxer
-// @downloadURL https://raw.githubusercontent.com/Bread-Ch4n/Catppuccin-Fluxer/refs/heads/main/userscripts/auto_update.user.js
-// ==/UserScript==
+// ==/UserScript=
 
 const CSS_URL =
   "https://raw.githubusercontent.com/Bread-Ch4n/Catppuccin-Fluxer/refs/heads/main/mauve.css";

@@ -1,5 +1,8 @@
 // ==UserScript==
+// @author Bread-Chan
 // @name         Fluxer CSS Hot Reload
+// @version      1.0.1
+// @downloadURL  https://raw.githubusercontent.com/Bread-Ch4n/Catppuccin-Fluxer/refs/heads/main/userscripts/hot_reload/hot_reload.user.js
 // @match        https://web.fluxer.app/*
 // @grant        GM_xmlhttpRequest
 // @connect      127.0.0.1
