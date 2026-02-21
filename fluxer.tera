@@ -114,26 +114,26 @@ whiskers:
   /* Direct Messages & Favourites buttons */
   [class*="GuildsLayout.module__guildListItem"] {
     > div > [class*="GuildsLayout.module__fluxerButtonIcon"] {
-      color: var(--button-primary-text);
-      transition: color 0.2s, background-color 0.2s,
+      transition:
+        color 0.2s, background-color 0.2s,
   border-color 0.2s;
+      color: var(--button-primary-text);
     }
 
     &:hover > div > [class*="GuildsLayout.module__fluxerButtonIcon"] {
-    background-color: var(--button-primary-text); color:
-    var(--button-primary-fill); border: 1px solid var(--button-primary-fill);
+    border: 1px solid var(--button-primary-fill); background-color:
+    var(--button-primary-text); color: var(--button-primary-fill);
   }
 }
-
-/* #endregion */ /* #region DMList */ /* Friends, Personal Notes & Plutonium
-buttons */ [class*="DMList.module__clickableItem"] [class*="clickableItemIcon"]
+/* Friends, Personal Notes & Plutonium buttons */ /* #region DMList */
+[class*="DMList.module__clickableItem"] [class*="clickableItemIcon"]
 {color: var(--brand-primary-fill);
   }
 
   [class*="DMList.module__clickableItemSelected"] [class*="clickableItemIcon"] {
+    border: 1px solid var(--button-primary-fill);
     background-color: var(--button-primary-text);
     color: var(--button-primary-fill);
-    border: 1px solid var(--button-primary-fill);
   }
 
   /* #endregion */
@@ -202,9 +202,8 @@ buttons */ [class*="DMList.module__clickableItem"] [class*="clickableItemIcon"]
     }
   }
 }
-
-/* #endregion */ /* #region Favorites Welcome Section */ /* Favourites star icon
-*/ [class*="FavoritesWelcomeSection.module__iconWrapper"]
+/* Favourites star icon */ /* #region Favorites Welcome Section */
+[class*="FavoritesWelcomeSection.module__iconWrapper"]
 {color: var(--brand-primary-fill);
   }
 
@@ -271,11 +270,11 @@ buttons */ [class*="DMList.module__clickableItem"] [class*="clickableItemIcon"]
   }
 
   [class*="LinkedAccountsTab.module__platformIconButton"] {
+    border: 1px solid var(--brand-primary);
     background-color: color-mix(in srgb,
   var(--brand-primary) 30%, transparent);
-    border: 1px solid var(--brand-primary);
     svg {
-    color: var(--brand-primary); fill: var(--brand-primary);
+    fill: var(--brand-primary); color: var(--brand-primary);
   }
 }
 
@@ -291,12 +290,21 @@ buttons */ [class*="DMList.module__clickableItem"] [class*="clickableItemIcon"]
     color: var(--brand-primary);
 
     [aria-selected="true"] & {
+      background-color: color-mix(
+        in srgb, var(--brand-primary) 10%,
+  transparent
+      );
       color: var(--brand-primary-fill);
-      background-color: color-mix(in srgb, var(--brand-primary) 10%,
-  transparent);
     }
   }
 
+  /* #endregion */
+
+  /* #region Mobile */
+
+  [class*="MobileTextareaLayout.module__mobileSendButton"] {
+    color: var(--brand-primary-fill);
+  }
   /* #endregion */
 
   /* ! TODO: update to newer classnames. This still likely works but needs an update just incase */
