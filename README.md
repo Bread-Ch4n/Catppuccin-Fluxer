@@ -13,12 +13,26 @@ Install the auto-update userscript to keep your theme automatically updated:
 4. Visit https://web.fluxer.app/ — the theme will be automatically applied!
 
 ### Manual Install
-1. Copy the contents of any `flavor-accent.css` file within the [themes](themes) folder
-2. In Fluxer, go to Settings → Look & Feel → Custom Theme Tokens → Custom CSS Overrides
+1. Copy the contents of any `accent.css` file within the [themes](themes) folder
+2. In Fluxer, go to **Settings → Look & Feel → Custom Theme Tokens → Custom CSS Overrides**
 3. Paste the CSS and save
 
 ## Development
 
+### Prerequisites
+
+- [Bun](https://bun.sh/) — used as the package manager and task runner
+- [Whiskers](https://github.com/catppuccin/whiskers) — used to generate themes from templates
+
+### Setup
+
+```sh
+bun i
+bun run dev
+```
+
+This watches for changes in [`src/styles/`](src/styles/) and regenerates [`src/out.css`](src/out.css), which is then used by [Whiskers](https://github.com/catppuccin/whiskers) to generate all flavors in the [`themes/`](themes) directory.
+
 ### Hot Reload
-For development with automatic reload on CSS changes:
-read the [README](/userscripts/hot_reload/README.md)
+
+For automatic theme reloading in the browser during development, see the [Hot Reload README](userscripts/hot_reload/README.md).

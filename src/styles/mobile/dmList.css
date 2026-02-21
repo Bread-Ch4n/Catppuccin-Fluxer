@@ -1,0 +1,23 @@
+/* Personal Notes */
+[class*="DMList.module__mobileSpecialButtonIcon"] {
+    color: var(--brand-primary-fill);
+}
+
+[class*="DMList.module__mobilePersonalNotesButtonSelected"] [class*="DMList.module__mobileSpecialButtonIcon"] {
+    border: 1px solid var(--button-primary-fill);
+    background-color: var(--button-primary-text);
+    color: var(--button-primary-fill);
+}
+
+/* Send message button in right bottom corner */
+[class*="DMList.module__mobileFab"] * {
+    color: var(--brand-primary-fill);
+}
+
+[class*="DMList.module__mobileHeaderButton"] {
+    color: var(--brand-primary-fill);
+}
+
+[class*="DMList.module__mobileAddFriendButton"] {
+    color: var(--brand-primary-fill);
+}

@@ -1,0 +1,20 @@
+/* #region Profile*/
+
+[class*="PlutoniumUpsell.module__upsell"] {
+    & [class*="text"],
+    & svg {
+        color: var(--background-primary);
+    }
+
+    & button {
+        border: 1px solid var(--button-primary-text);
+        background-color: var(--button-primary-fill);
+        color: var(--button-primary-text);
+
+        &:hover {
+            background-color: var(--button-primary-active-fill);
+        }
+    }
+}
+
+/* #endregion */

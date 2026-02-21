@@ -10,7 +10,7 @@ const cssPath = path.join(
   "..",
   "themes",
   "mocha",
-  "mocha-mauve.css",
+  "mauve.css",
 );
 
 const clients = new Set();

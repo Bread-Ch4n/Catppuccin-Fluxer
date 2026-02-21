@@ -1,0 +1,9 @@
+/* Send message btn next to the text area */
+[class*="MobileTextareaLayout.module__mobileSendButton"] {
+    color: var(--brand-primary-fill);
+}
+
+/* Message button on user profile */
+[class*="UserProfileMobileSheet.module__actionIconContainer"] svg:not([class*="UserProfileMobileSheet.module__actionIconSecondary"]) {
+    color: var(--brand-primary-fill);
+}

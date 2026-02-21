@@ -1,0 +1,75 @@
+/* Favourites star icon */
+[class*="FavoritesWelcomeSection.module__iconWrapper"] {
+  color: var(--brand-primary-fill);
+}
+
+[class*="ContextMenu.module__checkbox"] {
+  border-color: var(--brand-primary);
+
+  :after {
+    border-color: var(--brand-primary-fill);
+  }
+}
+
+[class*="RadioGroup.module__innerDotRadio"] {
+  fill: var(--brand-primary-fill);
+}
+
+/* Switches */
+[class*="Switch.module__switchThumb"][data-state="checked"] {
+  & svg {
+    fill: var(--brand-primary-fill);
+  }
+}
+
+/* GIF text on gifs */
+[class*="GifIndicator.module__indicator"] {
+  color: var(--text-primary);
+}
+
+/* New messages bar */
+[class*="Messages.module__newMessagesBar"] {
+  color: var(--brand-primary-fill);
+}
+
+/* Pressed reaction counter */
+[class*="MessageReactions.module__reactionButton"][aria-pressed="true"]
+  [class*="countWrapper"] {
+  color: var(--brand-primary);
+}
+
+:is(
+  [class*="UserProfileShared.module__connectionIcon"],
+  [class*="LinkedAccountsTab.module__platformIconButton"]
+) {
+  border: 1px solid var(--brand-primary);
+  background-color: color-mix(in srgb, var(--brand-primary) 20%, transparent);
+
+  svg {
+    fill: var(--brand-primary);
+    color: var(--brand-primary);
+  }
+}
+
+[class*="ThemeTab.module__themeButtonCheckmarkIcon"] {
+  color: var(--brand-primary-fill);
+}
+
+[class*="DevicesTab.module__authSession"] {
+  border-color: var(--border-color);
+}
+
+[class*="ProfileTypeSelector.module__guildOption"] {
+  color: var(--brand-primary);
+}
+
+:has(
+  > [class*="ProfileTypeSelector.module__guildOption"]
+)[aria-selected="true"] {
+  background-color: color-mix(in srgb, var(--brand-primary) 10%, transparent);
+  color: var(--brand-primary-fill);
+}
+
+[class*="friendActions"] > [class*="actionButtonCancel"] {
+  color: var(--brand-primary-fill);
+}

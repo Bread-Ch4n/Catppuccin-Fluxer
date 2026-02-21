@@ -1,0 +1,10 @@
+/* Friends, Personal Notes & Plutonium buttons */
+[class*="DMList.module__clickableItem"] [class*="clickableItemIcon"] {
+    color: var(--brand-primary-fill);
+}
+
+[class*="DMList.module__clickableItemSelected"] [class*="clickableItemIcon"] {
+    border: 1px solid var(--button-primary-fill);
+    background-color: var(--button-primary-text);
+    color: var(--button-primary-fill);
+}

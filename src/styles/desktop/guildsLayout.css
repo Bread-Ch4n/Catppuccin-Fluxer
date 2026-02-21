@@ -1,0 +1,15 @@
+/* Direct Messages & Favourites buttons */
+[class*="GuildsLayout.module__guildListItem"] {
+    > div > [class*="GuildsLayout.module__fluxerButtonIcon"] {
+        transition: color 0.2s,
+        background-color 0.2s,
+        border-color 0.2s;
+        color: var(--button-primary-text);
+    }
+
+    &:hover > div > [class*="GuildsLayout.module__fluxerButtonIcon"] {
+        border: 1px solid var(--button-primary-fill);
+        background-color: var(--button-primary-text);
+        color: var(--button-primary-fill);
+    }
+}

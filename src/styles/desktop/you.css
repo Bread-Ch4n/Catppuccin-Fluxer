@@ -1,0 +1,3 @@
+[class*="YouPage.module__editButton"] * {
+    color: var(--brand-primary-fill);
+}

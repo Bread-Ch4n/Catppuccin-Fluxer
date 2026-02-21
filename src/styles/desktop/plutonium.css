@@ -1,0 +1,73 @@
+:is(
+    [class*="SettingsModalLayout.module__desktopScrollInner"],
+    [class*="MobileSettingsView.module__contentContainer"],
+    [class*="PremiumModal.module__contentContainer"]
+  ) {
+    [class*="mainContainer"] {
+        [class*="toggleContainer"] {
+            & button[class*="button"] {
+                &[aria-pressed="true"] {
+                    color: var(--brand-primary-fill);
+
+                    &:hover {
+                        background-color: hsl(from var(--brand-primary) h s calc(l - 10));
+                    }
+                }
+
+                &[aria-pressed="false"] {
+                    color: var(--text-primary);
+                }
+            }
+        }
+
+        [class*="gridWrapper"] {
+            [class*="popularBadgeSpace"] > [class*="popularBadge"] {
+                border: 1px solid var(--brand-primary);
+                background-color: var(--brand-primary-fill);
+            }
+
+            [class*="cardDefault"] {
+                border-color: var(--brand-primary);
+
+                [class*="contentContainer"] > * {
+                    color: var(--brand-primary);
+                }
+            }
+
+            [class*="cardPopular"] {
+                :is(
+            [class*="cardTitlePopular"],
+            [class*="cardPeriodPopular"],
+            [class*="cardPricePopular"]
+          ) {
+                    color: var(--brand-primary-fill);
+                }
+
+                [class*="badgeSpace"] {
+                    border-color: var(--brand-primary-fill);
+                    background-color: var(--brand-primary);
+                    color: var(--brand-primary-fill);
+                }
+
+                & button[class*="button"][aria-label="Yearly"] {
+                    background-color: var(--brand-primary-fill);
+                    color: var(--brand-primary);
+
+                    &:hover {
+                        background-color: hsl(
+                                from var(--brand-primary-fill) h s calc(l + 10)
+                        );
+                    }
+                }
+            }
+        }
+
+        [class*="FeatureComparisonTable.module__table"] {
+            &,
+            [class*="header"],
+            [class*="row"] {
+                border-color: var(--border-color);
+            }
+        }
+    }
+}
