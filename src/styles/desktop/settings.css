@@ -17,4 +17,18 @@
     }
 }
 
+[class*="PremiumTrialBanner.module__banner"] {
+    color: var(--background-primary);
+
+    [class*="Button.module__button"] {
+        background-color: var(--button-primary-fill);
+        color: var(--button-primary-text);
+        border: 1px solid var(--button-primary-text);
+
+        &:hover {
+            background-color: var(--button-primary-active-fill);
+        }
+    }
+}
+
 /* #endregion */
